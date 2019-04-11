@@ -29,15 +29,20 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
+
+import it.sauronsoftware.ftp4j.FTPClient;
+import it.sauronsoftware.ftp4j.FTPDataTransferListener;
 
 
 /**
@@ -186,6 +191,30 @@ public class AddProductFragment extends Fragment {
                     Image = "https://www.androidthai.in.th/rmutk/Picture" + nameImage;
                     Log.d("11AprilV2", "Image ==>> " + Image);
 
+                    File file = new File(path);
+                    FTPClient ftpClient = new FTPClient();
+
+                    try {
+
+                        ftpClient.connect("ftp.androidthai.in.th", 21);
+                        ftpClient.login("rmutk@androidthai.in.th", "Abc12345");
+                        ftpClient.setType(FTPClient.TYPE_BINARY);
+                        ftpClient.changeDirectory("Picture");
+                        ftpClient.upload(file, new UploadListener());
+
+
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+
+                        try {
+                            ftpClient.disconnect(true);
+                        } catch (Exception e1) {
+                            e1.printStackTrace();
+                        }
+
+                    }
+
 
                 } // if
 
@@ -200,6 +229,35 @@ public class AddProductFragment extends Fragment {
 
 
     }
+
+    public class UploadListener implements FTPDataTransferListener {
+
+        @Override
+        public void started() {
+            Toast.makeText(getActivity(), "Start Upload", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void transferred(int i) {
+            Toast.makeText(getActivity(), "Continue Upload", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void completed() {
+            Toast.makeText(getActivity(), "Complete Upload", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void aborted() {
+            Toast.makeText(getActivity(), "Aborted Upload", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void failed() {
+            Toast.makeText(getActivity(), "False Upload", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     private void pictureController() {
         imageView = getView().findViewById(R.id.imvProduct);
