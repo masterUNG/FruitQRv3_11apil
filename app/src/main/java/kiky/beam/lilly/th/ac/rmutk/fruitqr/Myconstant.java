@@ -21,6 +21,11 @@ public class Myconstant {
     private String urlGetAllDetailFramer = "http://www.androidthai.in.th/rmutk/getAllDetaiFramerLilly.php"; //Admin ดูได้ทั้งหมด
 
     private String urlGetAllFramer = "https://www.androidthai.in.th/rmutk/getAllFramerlilly.php";
+    private String urlProductPic = "https://www.androidthai.in.th/rmutk/Picture/product.png";
+
+    public String getUrlProductPic() {
+        return urlProductPic;
+    }
 
     public String getUrlGetAllFramer() {
         return urlGetAllFramer;

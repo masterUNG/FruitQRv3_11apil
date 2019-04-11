@@ -125,6 +125,7 @@ public class MainFragment extends Fragment {
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putString("idLogin", idString);
                             editor.putString("TypeUser", typeUser);
+                            editor.putString("Name", name);
                             editor.commit();
 
 
