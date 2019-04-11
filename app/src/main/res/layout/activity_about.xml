@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--Toolbar-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toobarRegister"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <!--About-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:orientation="vertical">
+
+            <!--หัวข้อ-->
+            <TextView
+                android:id="@+id/txtaa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="เกี่ยวกับเรา"
+                android:textColor="@color/colorAA"
+                android:textSize="@dimen/h2" />
+
+            <!--ช่องว่าง-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+            </LinearLayout>
+
+            <!--เนื้อหา-->
+            <TextView
+                android:id="@+id/txtbb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="ระบบจัดการห่วงโซ่อุปทานอิเล็กทรอนิกส์สำหรับผลิตภัณฑ์ชุมชน กรณีศึกษากลุ่มนำร่องชุมชนบ้านบึง อำเภอบ้านคา จังหวัดราชบุรี"
+                android:textColor="@color/colorAA"
+                android:textSize="@dimen/h2" />
+
+            <!--ช่องว่าง-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+            </LinearLayout>
+
+            <!--Logo-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--Icon-->
+                <ImageView
+                    android:layout_width="43dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/fruitappel" />
+                <ImageView
+                    android:layout_width="43dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/fruitmango" />
+                <ImageView
+                    android:layout_width="43dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/fruitcorn" />
+                <ImageView
+                    android:layout_width="43dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/fruitpurple" />
+                <ImageView
+                    android:layout_width="43dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/fruitlemon" />
+                <ImageView
+                    android:layout_width="43dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/fruitcarrot" />
+                <ImageView
+                    android:layout_width="43dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/fruitgrave" />
+                <ImageView
+                    android:layout_width="43dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/fruitwatermelon" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

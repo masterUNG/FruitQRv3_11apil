@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Fruit QR</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="register">ลงทะเบียน</string>
+
+    <string name="aboutme">เกี่ยวกับ</string>
+
+    <string name="open">Qpen Drawer</string>
+
+    <string name="close">Close Drawer</string>
+
+</resources>

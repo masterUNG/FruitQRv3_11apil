@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!--Name-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="62dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/logo2" />
+
+            <TextView
+                android:id="@+id/txtName"
+                android:textColor="#009688"
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:text="Name Fruit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <!--Amount and Unit and Date-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtAmount"
+                android:textStyle="bold"
+                android:textSize="@dimen/h2"
+                android:text="Amount = 123 กิโลกรัม"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:textColor="#8BC34A"
+                android:textStyle="bold"
+                android:textSize="@dimen/h2"
+                android:layout_alignParentRight="true"
+                android:text="7/04/2019"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtNameOwner"
+            android:text="Name Owner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--Line ทำเส้น-->
+        <View
+            android:layout_marginTop="10dp"
+            android:background="#CEC8C8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

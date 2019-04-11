@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--Toolbar-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toobarProduct"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <!--Content-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="30dp"
+                android:orientation="vertical">
+
+
+                <!--NameFruit-->
+                <EditText
+                    android:id="@+id/editProFruit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ชื่อผลผลิต(ผลไม้) :"
+                    android:inputType="text" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="155dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="30dp"
+                    android:src="@drawable/ic_action_addfruit" />
+
+                <!--Name-->
+                <EditText
+                    android:id="@+id/editProname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ชื่อหน่วยผลผลิต :"
+                    android:inputType="text" />
+
+
+                <!--Address-->
+                <EditText
+                    android:id="@+id/editProAdd"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ที่ตั้ง:"
+                    android:lines="3" />
+
+                <!--Phone-->
+                <EditText
+                    android:id="@+id/editProPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="เบอร์โทรศัพท์ :"
+                    android:inputType="phone" />
+
+                <!--Date-->
+                <EditText
+                    android:id="@+id/editProdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="วันที่/จำนวนล็อตที่ผลิต :"
+                    android:inputType="text" />
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</FrameLayout>

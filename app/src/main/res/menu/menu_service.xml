@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--สร้างไอคอน-->
+    <item
+        android:id="@+id/itemQR"
+        android:icon="@drawable/ic_action_qr"
+        android:title="Read QR Code"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/itemExit"
+        android:icon="@drawable/ic_action_exit"
+        android:title="Exit App"
+        app:showAsAction="always"></item>
+
+</menu>
