@@ -17,7 +17,12 @@ public class ShowListFragmentAdapter extends  RecyclerView.Adapter<ShowListFragm
     private OnClickItem onClickItem;
     private LayoutInflater layoutInflater;
 
-    public ShowListFragmentAdapter(Context context, ArrayList<String> nameStringArrayList, ArrayList<String> amountStringArrayList, ArrayList<String> dateStringArrayList, ArrayList<String> nameOwnerStringArrayList, OnClickItem onClickItem) {
+    public ShowListFragmentAdapter(Context context,
+                                   ArrayList<String> nameStringArrayList,
+                                   ArrayList<String> amountStringArrayList,
+                                   ArrayList<String> dateStringArrayList,
+                                   ArrayList<String> nameOwnerStringArrayList,
+                                   OnClickItem onClickItem) {
         this.layoutInflater = LayoutInflater.from(context);
         this.nameStringArrayList = nameStringArrayList;
         this.amountStringArrayList = amountStringArrayList;
@@ -38,7 +43,7 @@ public class ShowListFragmentAdapter extends  RecyclerView.Adapter<ShowListFragm
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ShowListFramerViewHolder showListFramerViewHolder, int i) {
+    public void onBindViewHolder(@NonNull final ShowListFramerViewHolder showListFramerViewHolder, int i) {
         //ดึงเดต้ามาเป็นตัวอักษร
         String name = nameStringArrayList.get(i);
         String amountAndUnit = amountStringArrayList.get(i);
@@ -50,6 +55,12 @@ public class ShowListFragmentAdapter extends  RecyclerView.Adapter<ShowListFragm
         showListFramerViewHolder.amountTextView.setText("Amount = " + amountAndUnit);
         showListFramerViewHolder.dateTextView.setText(date);
         showListFramerViewHolder.nameOwnerTextView.setText("Owner : " + nameOwer);
+        showListFramerViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickItem.onClickitem(v, showListFramerViewHolder.getAdapterPosition());
+            }
+        });
 
     }
 

@@ -353,7 +353,7 @@ public class MenuDrawerFragment extends Fragment {
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.contentServiceFragment,ShowListFragment.showListInstance(typeDataInt,idLogin)).commit();
+                        .replace(R.id.contentServiceFragment,new ShowListProductFragment()).commit();
                 break;
 
 //               เพิ่มรายการผลิตภัณฑ์
@@ -361,7 +361,7 @@ public class MenuDrawerFragment extends Fragment {
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.contentServiceFragment,new AddFramerFragment()).commit();
+                        .replace(R.id.contentServiceFragment,new AddProductFragment()).commit();
 
                 break;
 

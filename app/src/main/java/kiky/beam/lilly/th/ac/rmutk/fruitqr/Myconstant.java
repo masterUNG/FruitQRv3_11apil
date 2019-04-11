@@ -20,6 +20,11 @@ public class Myconstant {
     private String urlGetDetailFramerWhereIdRecord = "http://www.androidthai.in.th/rmutk/getDetailFramerWhereIdRecordLilly.php"; //ดูได้แค่ผู้ผลิค
     private String urlGetAllDetailFramer = "http://www.androidthai.in.th/rmutk/getAllDetaiFramerLilly.php"; //Admin ดูได้ทั้งหมด
 
+    private String urlGetAllFramer = "https://www.androidthai.in.th/rmutk/getAllFramerlilly.php";
+
+    public String getUrlGetAllFramer() {
+        return urlGetAllFramer;
+    }
 
     public String getUrlGetDetailFramerWhereIdRecord() {
         return urlGetDetailFramerWhereIdRecord;
