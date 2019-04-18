@@ -65,6 +65,7 @@ public class ShowProductFragment extends Fragment {
 
         try {
 
+//            for Product
             GetDataWhereOneColumn getDataWhereOneColumn = new GetDataWhereOneColumn(getActivity());
             getDataWhereOneColumn.execute("id", idProduct, myconstant.getUrlGetProductWhereId());
             String jsonProduct = getDataWhereOneColumn.get();
@@ -77,6 +78,32 @@ public class ShowProductFragment extends Fragment {
                 Log.d("18AprilV3", "productStringArrayList[" + i + "] ==> " + productStringArrayList.get(i));
             }
 
+//            for Former
+            GetDataWhereOneColumn getDataWhereOneColumn1 = new GetDataWhereOneColumn(getActivity());
+            getDataWhereOneColumn1.execute("id", productStringArrayList.get(4), myconstant.getUrlGetFarmerWhereId());
+            String jsonFarmer = getDataWhereOneColumn1.get();
+            Log.d("18AprilV4", "jsonFarmer ==>> " + jsonFarmer);
+            String[] colunmdetailFarmer = myconstant.getColumnDetailFarmer();
+
+            JSONArray jsonArray1 = new JSONArray(jsonFarmer);
+            JSONObject jsonObject1 = jsonArray1.getJSONObject(0);
+            for (int i = 0; i < colunmdetailFarmer.length; i += 1) {
+                farmerStringArrayList.add(jsonObject1.getString(colunmdetailFarmer[i]));
+                Log.d("18AprilV4", "farmerStringArrayList[" + i + "] ==> " + farmerStringArrayList.get(i));
+            }
+
+            GetDataWhereOneColumn getDataWhereOneColumn2 = new GetDataWhereOneColumn(getActivity());
+            getDataWhereOneColumn2.execute("id", productStringArrayList.get(1), myconstant.getUrlGetUserWhereId());
+            String jsonUser = getDataWhereOneColumn2.get();
+            Log.d("18AprilV5", "jsonUser ==> " + jsonUser);
+
+            JSONArray jsonArray2 = new JSONArray(jsonUser);
+            JSONObject jsonObject2 = jsonArray2.getJSONObject(0);
+            String[] columnUser = myconstant.getColumnUser();
+            for (int i = 0; i < columnUser.length; i += 1) {
+                userStringArrayList.add(jsonObject2.getString(columnUser[i]));
+                Log.d("18AprilV5", "userStringArrayList[" + i + "] ==> " + userStringArrayList.get(i));
+            }
 
 
 

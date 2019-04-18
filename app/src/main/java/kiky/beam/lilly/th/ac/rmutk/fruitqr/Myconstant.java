@@ -8,9 +8,13 @@ public class Myconstant {
     private  String[] units = {"กิโลกรัม","ผล","ลัง"};
     private String[] columnDetailProduct = {"id", "idRecord", "NameRecord", "TypeRecord", "idFarmer",
             "Name", "Detail", "Image", "Amount", "Unit", "Date", "QRcode"};
+    private String[] columnDetailFarmer = {"id", "idRecord", "Name", "Amount", "Unit", "Date", "Namesend"};
+    private String[] columnUser = {"id", "Name", "FirstName", "SecondName", "Address", "Phone", "User",
+            "Password", "TypeUser"};
 
     private String nameFileSharePreference = "Fruit";
 
+    private String urlGetFarmerWhereId = "http://androidthai.in.th/rmutk/getFarmerWhereId.php";
     private String urlGetProductWhereId = "http://androidthai.in.th/rmutk/getProductWhereIdMaster.php";
     private String urlGetAllDetailProduct = "http://androidthai.in.th/rmutk/getDetailProduct.php";
     private String urlAddDetailProduct = "http://www.androidthai.in.th/rmutk/addDetailProductMaster.php";
@@ -27,6 +31,18 @@ public class Myconstant {
 
     private String urlGetAllFramer = "https://www.androidthai.in.th/rmutk/getAllFramerlilly.php";
     private String urlProductPic = "https://www.androidthai.in.th/rmutk/Picture/product.png";
+
+    public String[] getColumnUser() {
+        return columnUser;
+    }
+
+    public String[] getColumnDetailFarmer() {
+        return columnDetailFarmer;
+    }
+
+    public String getUrlGetFarmerWhereId() {
+        return urlGetFarmerWhereId;
+    }
 
     public String[] getColumnDetailProduct() {
         return columnDetailProduct;
