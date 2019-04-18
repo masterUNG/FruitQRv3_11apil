@@ -9,6 +9,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -105,6 +109,14 @@ public class ShowProductFragment extends Fragment {
                 Log.d("18AprilV5", "userStringArrayList[" + i + "] ==> " + userStringArrayList.get(i));
             }
 
+//            Show View
+//            Name Product
+            TextView nameTextView = getView().findViewById(R.id.txtName);
+            nameTextView.setText(productStringArrayList.get(5));
+
+//            Image Product
+            ImageView imageView = getView().findViewById(R.id.imvImage);
+            Picasso.get().load(productStringArrayList.get(7)).resize(800, 600).into(imageView);
 
 
         } catch (Exception e) {

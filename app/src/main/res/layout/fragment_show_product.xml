@@ -14,6 +14,41 @@
         android:layout_height="?attr/actionBarSize"/>
 
     <!--Product Detail-->
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Title1-->
+        <TextView
+            android:textStyle="bold"
+            android:textSize="@dimen/h1"
+            android:text="Product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!--Name-->
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="@dimen/h1"
+            android:text="Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!--Image-->
+        <ImageView
+            android:id="@+id/imvImage"
+            android:layout_margin="10dp"
+            android:scaleType="centerInside"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+
+
+    </LinearLayout>
 
     <!--Farmer Detail-->
 
