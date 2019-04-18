@@ -1,6 +1,7 @@
 package kiky.beam.lilly.th.ac.rmutk.fruitqr;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -59,6 +60,7 @@ public class ShowListProductFragment extends Fragment {
             ArrayList<String> amountStringArrayList = new ArrayList<>();
             ArrayList<String> unitStringArrayList = new ArrayList<>();
             ArrayList<String> iconStringArrayList = new ArrayList<>();
+            final ArrayList<String> idDetailProductStringArrayList = new ArrayList<>();
 
             JSONArray jsonArray = new JSONArray(jsonString);
             for (int i = 0; i < jsonArray.length(); i += 1) {
@@ -68,7 +70,7 @@ public class ShowListProductFragment extends Fragment {
                 amountStringArrayList.add(jsonObject.getString("Amount"));
                 unitStringArrayList.add(jsonObject.getString("Unit"));
                 iconStringArrayList.add(jsonObject.getString("Image"));
-                Log.d("18AprilV1", iconStringArrayList.get(i));
+                idDetailProductStringArrayList.add(jsonObject.getString("id"));
             }
 
             ShowListAdapter showListAdapter = new ShowListAdapter(getActivity(), nameStringArrayList,
@@ -77,6 +79,12 @@ public class ShowListProductFragment extends Fragment {
                         @Override
                         public void onClickitem(View view, int position) {
                             Log.d("18AprilV1", "Position ==> " + position);
+
+                            Intent intent = new Intent(getActivity(), ProductActivity.class);
+                            intent.putExtra("idProduct", idDetailProductStringArrayList.get(position));
+                            startActivity(intent);
+
+
                         }
                     });
             recyclerView.setAdapter(showListAdapter);
