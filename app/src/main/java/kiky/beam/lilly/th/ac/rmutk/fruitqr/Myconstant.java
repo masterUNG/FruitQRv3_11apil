@@ -6,9 +6,12 @@ public class Myconstant {
 
     private  String[] favoriteFruits = {"โปรดเลือกชื่อผลไม้","ส้ม","มะละกอ", "แตงโม","ทุเรียน"};
     private  String[] units = {"กิโลกรัม","ผล","ลัง"};
+    private String[] columnDetailProduct = {"id", "idRecord", "NameRecord", "TypeRecord", "idFarmer",
+            "Name", "Detail", "Image", "Amount", "Unit", "Date", "QRcode"};
 
     private String nameFileSharePreference = "Fruit";
 
+    private String urlGetProductWhereId = "http://androidthai.in.th/rmutk/getProductWhereIdMaster.php";
     private String urlGetAllDetailProduct = "http://androidthai.in.th/rmutk/getDetailProduct.php";
     private String urlAddDetailProduct = "http://www.androidthai.in.th/rmutk/addDetailProductMaster.php";
     private String urlAddDetailFramer = "http://www.androidthai.in.th/rmutk/addDetailFramerLilly.php";
@@ -24,6 +27,14 @@ public class Myconstant {
 
     private String urlGetAllFramer = "https://www.androidthai.in.th/rmutk/getAllFramerlilly.php";
     private String urlProductPic = "https://www.androidthai.in.th/rmutk/Picture/product.png";
+
+    public String[] getColumnDetailProduct() {
+        return columnDetailProduct;
+    }
+
+    public String getUrlGetProductWhereId() {
+        return urlGetProductWhereId;
+    }
 
     public String getUrlGetAllDetailProduct() {
         return urlGetAllDetailProduct;

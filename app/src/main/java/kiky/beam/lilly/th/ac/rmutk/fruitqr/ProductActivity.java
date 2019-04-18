@@ -17,6 +17,14 @@ public class ProductActivity extends AppCompatActivity {
         idProduct = getIntent().getStringExtra("idProduct");
         Log.d("18AprilV2", "idProduct ==> " + idProduct);
 
+        if (savedInstanceState == null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.contentProductFragment, ShowProductFragment.showProductInstance(idProduct))
+                    .commit();
+
+        }
+
 
     }
 }
