@@ -20,7 +20,13 @@ public class ShowListAdapter extends RecyclerView.Adapter<ShowListAdapter.ShowLi
     private OnClickItem onClickItem;
     private LayoutInflater layoutInflater;
 
-    public ShowListAdapter(Context context, ArrayList<String> nameStringArrayList, ArrayList<String> dateStringArrayList, ArrayList<String> amountStringArrayList, ArrayList<String> unitStringArrayList, ArrayList<String> iconStringArrayList, OnClickItem onClickItem) {
+    public ShowListAdapter(Context context,
+                           ArrayList<String> nameStringArrayList,
+                           ArrayList<String> dateStringArrayList,
+                           ArrayList<String> amountStringArrayList,
+                           ArrayList<String> unitStringArrayList,
+                           ArrayList<String> iconStringArrayList,
+                           OnClickItem onClickItem) {
         this.layoutInflater = LayoutInflater.from(context);
         this.nameStringArrayList = nameStringArrayList;
         this.dateStringArrayList = dateStringArrayList;
@@ -54,7 +60,10 @@ public class ShowListAdapter extends RecyclerView.Adapter<ShowListAdapter.ShowLi
         showListViewHolder.amountTextView.setText(amount);
         showListViewHolder.unitTextView.setText(unit);
 
-        Picasso.get().load(urlIcon).into(showListViewHolder.iconImageView);
+        Picasso.get()
+                .load(urlIcon)
+                .resize(800, 600)
+                .into(showListViewHolder.iconImageView);
 
         showListViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

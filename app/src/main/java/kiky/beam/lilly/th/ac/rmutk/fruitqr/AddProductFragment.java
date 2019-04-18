@@ -187,10 +187,10 @@ public class AddProductFragment extends Fragment {
 
                     Log.d("11AprilV2", "path ==>> " + path);
 
-                    String nameImage = path.substring(path.indexOf("/"));
+                    String nameImage = path.substring(path.lastIndexOf("/"));
 
                     Image = "https://www.androidthai.in.th/rmutk/Picture" + nameImage;
-                    Log.d("11AprilV2", "Image ==>> " + Image);
+
 
                     File file = new File(path);
                     FTPClient ftpClient = new FTPClient();
@@ -209,11 +209,18 @@ public class AddProductFragment extends Fragment {
                         ftpClient.upload(file, new UploadListener());
 
 //                        Add Data
+
+                        Log.d("18AprilV2", "Image ==>> " + Image);
+
                         AddDetailProductThread addDetailProductThread = new AddDetailProductThread(getActivity());
                         addDetailProductThread.execute(idRecord, NameRecord, TypeRecord, idFarmer, Name,
                                 Detail, Image, Amount, Unit, Date, QRcode, myconstant.getUrlAddDetailProduct());
                         String result = addDetailProductThread.get();
                         Log.d(tag, "result ==>>> " + result);
+
+                        if (Boolean.parseBoolean(result)) {
+                            goToProductList();
+                        }
 
 
                     } catch (Exception e) {
@@ -244,6 +251,18 @@ public class AddProductFragment extends Fragment {
 
     }
 
+    public void goToProductList(){
+
+        Log.d("18AprilV1", "goToProductList Work");
+
+        getActivity()
+                .getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.contentServiceFragment, new ShowListProductFragment())
+                .commit();
+
+    }
+
     public class UploadListener implements FTPDataTransferListener {
 
         @Override
@@ -259,6 +278,7 @@ public class AddProductFragment extends Fragment {
         @Override
         public void completed() {
             Toast.makeText(getActivity(), "Complete Upload", Toast.LENGTH_SHORT).show();
+
         }
 
         @Override
