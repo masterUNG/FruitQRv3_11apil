@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -193,6 +194,11 @@ public class AddProductFragment extends Fragment {
 
                     File file = new File(path);
                     FTPClient ftpClient = new FTPClient();
+                    String tag = "18AprilV1";
+
+                    StrictMode.ThreadPolicy threadPolicy = new StrictMode.ThreadPolicy
+                            .Builder().permitAll().build();
+                    StrictMode.setThreadPolicy(threadPolicy);
 
                     try {
 
@@ -202,18 +208,26 @@ public class AddProductFragment extends Fragment {
                         ftpClient.changeDirectory("Picture");
                         ftpClient.upload(file, new UploadListener());
 
+//                        Add Data
+                        AddDetailProductThread addDetailProductThread = new AddDetailProductThread(getActivity());
+                        addDetailProductThread.execute(idRecord, NameRecord, TypeRecord, idFarmer, Name,
+                                Detail, Image, Amount, Unit, Date, QRcode, myconstant.getUrlAddDetailProduct());
+                        String result = addDetailProductThread.get();
+                        Log.d(tag, "result ==>>> " + result);
 
 
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        Log.d(tag, "e ==> " + e.toString());
 
                         try {
                             ftpClient.disconnect(true);
                         } catch (Exception e1) {
-                            e1.printStackTrace();
+                            Log.d(tag, "e1 ==> " + e1.toString());
                         }
 
                     }
+
+
 
 
                 } // if

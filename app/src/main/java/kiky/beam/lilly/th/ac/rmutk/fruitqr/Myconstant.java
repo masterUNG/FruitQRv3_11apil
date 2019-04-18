@@ -9,6 +9,7 @@ public class Myconstant {
 
     private String nameFileSharePreference = "Fruit";
 
+    private String urlAddDetailProduct = "http://www.androidthai.in.th/rmutk/addDetailProductMaster.php";
     private String urlAddDetailFramer = "http://www.androidthai.in.th/rmutk/addDetailFramerLilly.php";
     private String urlAddUser = "https://www.androidthai.in.th/rmutk/addDataLilly.php";
     private String urlGetAllData = "https://www.androidthai.in.th/rmutk/getAllDatalilly.php";
@@ -22,6 +23,10 @@ public class Myconstant {
 
     private String urlGetAllFramer = "https://www.androidthai.in.th/rmutk/getAllFramerlilly.php";
     private String urlProductPic = "https://www.androidthai.in.th/rmutk/Picture/product.png";
+
+    public String getUrlAddDetailProduct() {
+        return urlAddDetailProduct;
+    }
 
     public String getUrlProductPic() {
         return urlProductPic;
